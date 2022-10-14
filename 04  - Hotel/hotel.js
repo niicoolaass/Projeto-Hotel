@@ -3,9 +3,9 @@
 
 		var nomeusuario = prompt("Qual o seu nome?");
 
-        var senha = 2678;
+        	var senha = 2678;
 
-        var lista_hospedes = [];
+ 		var lista_hospedes = [];
 
 
 		infsenha(); 
@@ -233,9 +233,10 @@
 
 				inicio();
 
-			} else {
-				alert("Use o auditório Laranja e inclua mais " + (a) + " cadeiras.");
+				} else {
+				difauditoria = cevento - 150;
 
+				alert("Use o auditório Laranja e inclua mais " + (difauditoria) + " cadeiras.");
 			}
 
 			var audreserva = prompt("Gostaria de efetuar a reserva? S/N")
@@ -370,10 +371,10 @@
 		}
 
 
-        function erro_pesquisar_hospedes(){
-            alert('Por favor, informe um número entre 1 e 3');
-            opcoes_hospedes();
-        }
+		function erro_pesquisar_hospedes(){
+		    alert('Por favor, informe um número entre 1 e 3');
+		    opcoes_hospedes();
+		}
 
 
 		function sair() {
