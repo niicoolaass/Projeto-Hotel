@@ -292,48 +292,33 @@
 
 			var gasolinasp = prompt("Qual o valor do gasolina no posto Stark Petrol?");
 
-			var tanque = 42;
-			
-			var porcentagem = 0.30;
+			var total_gasolinawo = alcoolwo * 42;
+			var total_alcoolwo = gasolinawo * 42;
+			var total_alcoolsp = alcoolsp * 42;
+			var total_gasolinasp = gasolinasp * 42;
 
-			var calc1 = alcool_wayne *porcentagem;
-
-			var alcoolwopreco = (alcoolwo * 100) / gasolinawo;
-
-			var alcoolwodesconto = 100 - alcoolsppreco;
-
-			var alcoolsppreco = (alcoolsp * 100) / gasolinasp;
-
-			var alcoolspdesconto = 100 - alcoolsppreco;
-
-			if (alcoolwo <= alcoolsp && alcoolwodesconto >= 30){
-				alert(nome +' é mais barato abastecer com álcool no posto Wayne Oil.');
-
-				alert ('O total será de R$'+ (alcoolwo * tanque));
-
+			var desconto_alcoolwo_gasolinasp = total_alcoolwo + total_gasolinasp * 30 / 100;
+			var desconto_alcoolwo_gasolinasp = total_alcoolwo + total_gasolinawo * 30 / 100;
+			var desconto_alcoolsp_gasolinasp = total_alcoolsp + total_gasolinasp * 30 / 100;
+			var desconto_gasolinasp_gasolinawo = total_alcoolsp + total_gasolinawo * 30 / 100;
+		
+			if (total_gasolinawo > total_gasolinasp && desconto_alcoolsp_gasolinasp > total_gasolinasp && desconto_alcoolwo_gasolinasp > total_gasolinasp) {
+				alert(nomeusuario + ", é mais barato abastecer com gasolina no posto Stark Petrol que é R$" + gasolinasp + ".");
+		
+			} else if (total_gasolinasp > total_gasolinawo && desconto_gasolinasp_gasolinawo > total_gasolinawo && desconto_alcoolwo_gasolinasp > total_gasolinawo) {
+				alert(nomeusuario + ", é mais barato abastecer com gasolina no posto Wayne Oil que é R$" + gasolinawo + ".");
+		
+			} else if (total_alcoolsp > total_alcoolwo && total_gasolinasp > desconto_alcoolwo_gasolinasp && total_gasolinawo > desconto_alcoolwo_gasolinasp) {
+				alert(nomeusuario + ", é mais barato abastecer com alcool no posto Wayne Oil que é R$" + alcoolwo + ".");
+		
+			} else {
+				alert(nomeusuario + ", é mais barato abastecer com alcool no posto Stark Petrol que é R$" + alcoolsp + ".");
 			}
-			else if (alcoolsp < alcoolwo && alcoolspdesconto >= 30 ) {
-				alert (nome+' é mais barato abastecer com álcool no posto Stark Petrol.');
-
-				alert ('O total será de R$'+ (alcoolsp * tanque));
-
-			}
-
-			else if (gasolinawo < gasolinasp){
-				alert(nome +' é mais barato abastecer com gasolina no posto Wayne Oil.');
-
-				alert ('O total será de R$'+ (gasolinawo * tanque));
-
-			}
-			else {
-				alert(nome +' é mais barato abastecer com gasolina no posto Stark Petrol.');
-
-				alert ('O total será de R$'+ (gasolinasp * tanque));
-
-			}
-
-
+		
 			inicio();
+		}
+
+
 		}
 
 		function manu_ares_condionados() {
